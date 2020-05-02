@@ -1,4 +1,4 @@
-def HighScores
+class HighScores
   attr_reader :scores
 
   def initialize(scores)
@@ -10,6 +10,20 @@ def HighScores
   end
 
   def personal_best
-    @scores.
+    sorted_scores.first
+  end
+
+  def personal_top_three
+    sorted_scores.first(3)
+  end
+
+  def latest_is_personal_best?
+    latest == personal_best
+  end
+
+  private
+
+  def sorted_scores
+    @scores.sort.reverse
   end
 end
