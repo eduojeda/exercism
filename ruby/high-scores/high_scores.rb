@@ -6,7 +6,7 @@ class HighScores
   end
 
   def latest
-    @scores.last
+    scores.last
   end
 
   def personal_best
@@ -24,6 +24,6 @@ class HighScores
   private
 
   def sorted_scores
-    @scores.sort.reverse
+    scores.sort.reverse
   end
 end
